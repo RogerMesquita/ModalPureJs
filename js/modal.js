@@ -33,9 +33,10 @@ export default class Modal{
         setTimeout(()=>this.bg.remove(),300);
     }
 
-    _closeModal(){
-        setTimeout(()=>this._modal.classList.remove('show'));
-         this._removeBg();
+     _closeModal(){
+        this._modal.classList.remove('show')
+        setTimeout(()=>this._modal.style.display = 'none');
+        this._removeBg();
     }
 
     _showModal(){
