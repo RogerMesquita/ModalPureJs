@@ -4,13 +4,15 @@ export default class Modal{
         if(this._modal === null){
             throw "Element Modal Invalid";
         }
-        this._closeBtn = $element.querySelector('.close');
+        this._closeBtn = $element.querySelectorAll('#modal .close, .closeModal');
         this.init();
     }
 
     init(){
         if(this._closeBtn != null){
-            this._closeBtn.addEventListener('click',() => this.close());
+            this._closeBtn.forEach(function(e){
+                e.addEventListener('click',() => this.close());
+            }.bind(this))           
         }
         return
     }
